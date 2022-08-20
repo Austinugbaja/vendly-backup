@@ -9,7 +9,6 @@ import MainLayout, {
 } from "../components/layoutscomponent/MainLayout";
 import Metric from "../components/profile/Metric";
 import PageLinks from "../components/profile/PageLinks";
-import DisplaySearchContextProvider from "../context/DisplaySearchContext";
 import NotificationBarContextProvider from "../context/NotificationBarContext";
 import TabLinkContextProvider from "../context/TabLinksContext";
 

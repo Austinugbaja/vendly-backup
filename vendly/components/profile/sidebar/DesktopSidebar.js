@@ -67,7 +67,7 @@ const DesktopSideBar = () => {
                         cursor-pointer
                         ${
                           tabIndex === 0
-                            ? "bg-nursery text-white py-3 w-[13em] rounded-tr-[16px] rounded-br-[16px]"
+                            ? "bg-nursery text-white py-3 w-[15em] transition-all duration-150 rounded-tr-[16px] rounded-br-[16px]"
                             : "bg-white "
                         }`}
               onClick={() => switchTabs(0)}
@@ -93,7 +93,7 @@ const DesktopSideBar = () => {
                     cursor-pointer
                     ${
                       tabIndex === 1
-                        ? "bg-nursery text-white py-3 w-[13em] rounded-tr-[16px] rounded-br-[16px]"
+                        ? "bg-nursery text-white py-3 w-[15em] transition-all duration-150 rounded-tr-[16px] rounded-br-[16px]"
                         : "bg-white "
                     }`}
               onClick={() => switchTabs(1)}
@@ -113,7 +113,7 @@ const DesktopSideBar = () => {
                     pl-6
                     mb-6
                     cursor-pointer
-                    ${ tabIndex === 2 ? 'bg-nursery text-white py-3 w-[13em] rounded-tr-[16px] rounded-br-[16px]' : 'bg-white ' }`} 
+                    ${ tabIndex === 2 ? 'bg-nursery text-white py-3 w-[15em] transition-all duration-150 rounded-tr-[16px] rounded-br-[16px]' : 'bg-white ' }`} 
                     onClick={() => switchTabs(2)}>
                         <span><InsightIcon color={tabIndex === 2 ? '#fff' : '#323232'}/></span>
                         <span className="text-base ml-4">Insights </span>

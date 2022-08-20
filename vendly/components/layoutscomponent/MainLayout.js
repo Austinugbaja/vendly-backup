@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import NotificationBarContextProvider, {
   NotificationBarContext,
 } from "../../context/NotificationBarContext";
@@ -7,14 +7,34 @@ import DesktopSideBar from "../profile/sidebar/DesktopSidebar";
 import NotificationSideBar from "../profile/sidebar/NotificationSidebar";
 import styles from "../../styles/NotificationSidebar.module.css";
 import MobileHeader from "../profile/header/MobileHeader";
-import DisplaySearchContextProvider from "../../context/DisplaySearchContext";
 import TabLinkContextProvider from "../../context/TabLinksContext";
 import DisplayMobileHeaderProvider from "../../context/DisplayMobileHeaderContext";
 import PageTitleContextProvider from "../../context/PageTitleContext";
 import UserContextProvider from "../../context/UserContext";
+import DisplayMobileProfileProvider from "../../context/DisplayMobileProfileContext";
 
 const MainLayout = ({ children }) => {
   const { toggle } = useContext(NotificationBarContext);
+  // const [displaySearch, setDisplaySearchInput] = useState(false);
+
+  // useEffect(() => {
+  //   ["load", "scroll", "resize"].forEach((e) =>
+  //     window.addEventListener(e, handleScroll)
+  //   );
+  //   return () =>
+  //     ["load", "scroll", "resize"].forEach((e) =>
+  //       window.removeEventListener(e, handleScroll)
+  //     );
+  //   // eslint-disable-next-line
+  // }, []);
+
+  // function handleScroll() {
+  //   if (window.scrollY > 2) {
+  //     setDisplaySearchInput(true);
+  //   } else {
+  //     setDisplaySearchInput(false);
+  //   }
+  // }
 
   return (
     <>
@@ -69,13 +89,13 @@ export const getLayout = (page) => {
     <UserContextProvider>
       <PageTitleContextProvider>
         <DisplayMobileHeaderProvider>
-          <DisplaySearchContextProvider>
-            <NotificationBarContextProvider>
-              <TabLinkContextProvider>
+          <NotificationBarContextProvider>
+            <TabLinkContextProvider>
+              <DisplayMobileProfileProvider>
                 <MainLayout>{page}</MainLayout>
-              </TabLinkContextProvider>
-            </NotificationBarContextProvider>
-          </DisplaySearchContextProvider>
+              </DisplayMobileProfileProvider>
+            </TabLinkContextProvider>
+          </NotificationBarContextProvider>
         </DisplayMobileHeaderProvider>
       </PageTitleContextProvider>
     </UserContextProvider>

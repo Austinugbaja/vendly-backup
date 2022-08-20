@@ -3,32 +3,16 @@ import MainLayout, {
   getLayout,
 } from "../components/layoutscomponent/MainLayout";
 import Product from "../components/profile/productCard/Product";
-import DisplaySearchContextProvider, {
-  DisplaySearchContext,
-} from "../context/DisplaySearchContext";
+import { DisplayMobileProfileContext } from "../context/DisplayMobileProfileContext";
 import NotificationBarContextProvider from "../context/NotificationBarContext";
 import TabLinkContextProvider from "../context/TabLinksContext";
 import { UserContext } from "../context/UserContext";
 
 const ProductPage = () => {
   const [gridWidth, setGridWidth] = useState("10rem");
-  const { displaySearch, setDisplaySearchInput } =
-    useContext(DisplaySearchContext);
   const { userProfile } = useContext(UserContext);
+  const { displayMobileProfile } = useContext(DisplayMobileProfileContext);
   let prod;
-
-  const displaySearchInput = () => {
-    if (window.scrollY >= 20) {
-      console.log("displaye");
-      setDisplaySearchInput(true);
-    } else {
-      console.log("remove");
-      setDisplaySearchInput(false);
-    }
-    // console.log(window.scrollY)
-  };
-
-  // window.addEventListener('scroll', displaySearchInput)
 
   useEffect(() => {
     if (window.screen.width >= 500) {
@@ -40,7 +24,11 @@ const ProductPage = () => {
   return (
     <div className="relative" id="prod">
       {/* start products tab view */}
-      <div className="sm:pl-3 sm:mt-6 mt-[21.9rem] px-3">
+      <div
+        className={`sm:pl-3 sm:mt-6 mt-0 pb-20 sm:pt-0 ${
+          displayMobileProfile ? "pt-[21.8rem]" : "pt-[11.4rem]"
+        } px-3`}
+      >
         <div
           style={{
             gridTemplateColumns: `repeat(auto-fit, minmax(${gridWidth}, 1fr))`,
@@ -56,7 +44,7 @@ const ProductPage = () => {
 
       {/* start create product button */}
       <div className="fixed bottom-2 z-20 sm:hidden block w-full px-3">
-        <button className="w-full h-12 px-6 bg-primary font-Poppins tracking-wide text-white font-[500]">
+        <button className="w-full h-12 px-6 rounded-md bg-primary font-Poppins tracking-wide text-white font-[500]">
           CREATE PRODUCT
         </button>
       </div>

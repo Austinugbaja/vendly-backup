@@ -45,12 +45,14 @@ const DesktopHeader = () => {
     const position = document.body.getBoundingClientRect().top;
     setScrollPos(position);
     setShow(position > scrollPos);
+    console.log(position, "position");
+    console.log(scrollPos, "scrollPos");
   };
 
   return (
     <header
       className={`bg-backgroundLight py-5 sticky top-0 z-10 px-6 ${
-        show ? "space-y-10" : "space-y-0"
+        show ? "space-y-10 shadow-none" : "space-y-0 shadow-md"
       }`}
     >
       {/* start search bar and create product button */}
@@ -64,7 +66,7 @@ const DesktopHeader = () => {
         <div className="relative text-gray-700 flex-grow flex">
           {/* start input field */}
           <input
-            className="h-10 pl-[3rem] pr-3 text-[13px] border-[#03358057] placeholder-gray-600 border rounded-md focus:shadow-outline bg-[#F4F4FF] flex flex-grow"
+            className="h-10 pl-[3rem] pr-3 text-[13px] focus:outline-none border-[#03358057] placeholder-gray-600 border rounded-md focus:shadow-outline bg-[#F4F4FF] flex flex-grow"
             type="text"
             placeholder="Search for products"
           />
@@ -108,13 +110,7 @@ const DesktopHeader = () => {
 
       {/* start products tag name */}
       <h1
-        className="
-            text-secondary 
-            font-Raleway 
-            font-semibold
-            text-2xl
-            uppercase
-            "
+        className={`text-secondary font-Raleway font-semibold text-2xl uppercase `}
       >
         {pageTitle}
       </h1>

@@ -4,16 +4,19 @@ import { TabListContext } from "../../../context/TabLinksContext";
 import { NotificationIcon, SearchIcon } from "../../iconsComponent/Icons";
 import ProfileStatusInfo from "../profileStatusInfo/ProfileStatusInfo";
 import Link from "next/link";
-import { DisplaySearchContext } from "../../../context/DisplaySearchContext";
 import { DisplayMobileHeaderContext } from "../../../context/DisplayMobileHeaderContext";
 import { UserContext } from "../../../context/UserContext";
+import MobileSearchInput from "../mobileSearchInput/mobileSearchInput";
+import { DisplayMobileProfileContext } from "../../../context/DisplayMobileProfileContext";
 
 const MobileHeader = () => {
   const { tabIndex, dispatch } = useContext(TabListContext);
-  const { displaySearch } = useContext(DisplaySearchContext);
   const { mobileHeader } = useContext(DisplayMobileHeaderContext);
   const router = useRouter();
   const { userProfile } = useContext(UserContext);
+  const { displayMobileProfile, setDisplayMobileProfile } = useContext(
+    DisplayMobileProfileContext
+  );
 
   const switchTabs = (id) => {
     if (id === 0) {
@@ -41,14 +44,14 @@ const MobileHeader = () => {
     <div
       className={`
         fixed 
-        z-20 
+        z-20 pb-3
         w-full 
         bg-backgroundLight
         top-0 
         ${!mobileHeader ? "hidden" : "block"}`}
     >
       {/* start navbar */}
-      <div className="flex w-full justify-between items-center mb-6 px-3 h-[3rem]">
+      <div className="flex w-full justify-between items-center px-3 h-14">
         {/* start hamburger menu icon */}
         <div>
           <svg
@@ -76,33 +79,18 @@ const MobileHeader = () => {
 
       {/* start profile info */}
       <div>
-        <ProfileStatusInfo
-          fullName={userProfile.fullName}
-          profilePic={userProfile.profilePic}
-        />
+        {displayMobileProfile ? (
+          <ProfileStatusInfo
+            fullName={userProfile.fullName}
+            profilePic={userProfile.profilePic}
+          />
+        ) : (
+          //  start search product
+          <MobileSearchInput />
+          //  end search product
+        )}
       </div>
       {/* end profile info */}
-
-      {/* start search product */}
-      <div
-        className={`relative text-gray-700 flex-grow px-3 mb-9 ${
-          displaySearch && tabIndex === 0 ? "flex" : "hidden"
-        }`}
-      >
-        {/* start input field */}
-        <input
-          className="h-[50px] pl-[3rem] pr-3 text-[13px] placeholder-gray-600 rounded-md focus:shadow-outline bg-[#ECF2FC] flex flex-grow"
-          type="text"
-          placeholder="Search for products"
-        />
-        {/* end input field */}
-
-        {/* search icon */}
-        <div className="absolute inset-y-0 left-0 flex items-center pl-6 pr-3 pointer-events-none">
-          <SearchIcon color="#000000" width="15" height="15" />
-        </div>
-      </div>
-      {/* end search product */}
 
       {/* start tab links */}
       <div className="px-3">
