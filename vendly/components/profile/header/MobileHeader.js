@@ -6,7 +6,7 @@ import ProfileStatusInfo from "../profileStatusInfo/ProfileStatusInfo";
 import Link from "next/link";
 import { DisplayMobileHeaderContext } from "../../../context/DisplayMobileHeaderContext";
 import { UserContext } from "../../../context/UserContext";
-import MobileSearchInput from "../MobileSearchInput/MobileSearchInput";
+import MobileSearchInput from "../mobileSearchInput/MobileSearchInput";
 import { DisplayMobileProfileContext } from "../../../context/DisplayMobileProfileContext";
 
 const MobileHeader = () => {
