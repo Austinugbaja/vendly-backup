@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import MainLayout, {
   getLayout,
 } from "../components/layoutscomponent/MainLayout";
+import Link from "next/link";
 import Product from "../components/profile/productCard/Product";
 import { DisplayMobileProfileContext } from "../context/DisplayMobileProfileContext";
 import NotificationBarContextProvider from "../context/NotificationBarContext";
@@ -48,9 +49,11 @@ const ProductPage = () => {
 
       {/* start create product button */}
       <div className="fixed bottom-2 z-20 sm:hidden block w-full px-3">
-        <button className="w-full h-12 px-6 rounded-md bg-primary font-Poppins tracking-wide text-white font-[500]">
-          CREATE PRODUCT
-        </button>
+        <Link href="/createproduct">
+          <button className="w-full h-12 px-6 bg-primary font-Poppins tracking-wide text-white font-[500]">
+            CREATE PRODUCT
+          </button>
+        </Link>
       </div>
       {/* end create product button */}
     </div>

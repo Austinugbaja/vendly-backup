@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { NotificationBarContext } from "../../../context/NotificationBarContext";
 import { PageTitleContext } from "../../../context/PageTitleContext";
 import { TabListContext } from "../../../context/TabLinksContext";
+import Link from "next/link";
 import { NotificationIcon, SearchIcon } from "../../iconsComponent/Icons";
 
 const DesktopHeader = () => {
@@ -81,9 +82,11 @@ const DesktopHeader = () => {
 
         {/* start create product button */}
         <div>
-          <button className="h-10 font-[500] px-5 text-indigo-100 bg-primary rounded-md text-[13px] flex justify-center w-[15rem] items-center">
-            CREATE PRODUCT
-          </button>
+          <Link href="/createproduct">
+            <button className="h-10 font-[500] px-5 text-indigo-100 bg-primary rounded-md text-[13px] flex justify-center w-[15rem] items-center">
+              CREATE PRODUCT
+            </button>
+          </Link>
         </div>
         {/* end create product button */}
 
