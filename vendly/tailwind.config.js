@@ -34,6 +34,9 @@ module.exports = {
         "base": "15px",
         "sm": "12px",
       },
+      borderRadius: {
+        "md": "4px",
+      },
     },
   },
   plugins: [],

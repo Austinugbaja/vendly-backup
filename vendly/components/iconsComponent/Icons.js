@@ -425,6 +425,7 @@ export const ErrorIcon = () => {
   );
 };
 
+// Add icon
 export const AddIcon = ({ color, width, height }) => {
   return (
     <svg
