@@ -8,6 +8,7 @@ import {
   NotificationIcon,
   SearchIcon,
 } from "../components/iconsComponent/Icons";
+import Link from "next/link";
 import Account from "../components/profile/account/Account";
 
 const Profile = () => {
@@ -68,9 +69,11 @@ const Profile = () => {
 
             {/* start create product button */}
             <div>
-              <button className="h-10 font-[500] px-5 m-2 text-indigo-100 bg-primary rounded-md text-[13px] flex justify-center w-[15rem] items-center">
-                CREATE PRODUCT
-              </button>
+              <Link href="/createproduct">
+                <button className="h-10 font-[500] px-5 m-2 text-indigo-100 bg-primary rounded-md text-[13px] flex justify-center w-[15rem] items-center">
+                  CREATE PRODUCT
+                </button>
+              </Link>
             </div>
             {/* end create product button */}
 

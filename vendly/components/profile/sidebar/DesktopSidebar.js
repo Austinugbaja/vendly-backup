@@ -35,8 +35,15 @@ const DesktopSideBar = () => {
         type: "SWITCH_ACCOUNTS",
         tabLinksId: id,
       });
-    } else {
+    } else if (id === 2) {
       router.push("/insights");
+      dispatch({
+        type: "SWITCH_INSIGHTS",
+        tabLinksId: id,
+      });
+    } else {
+      router.push("/createproduct");
+      setPageTitle("create product");
       dispatch({
         type: "SWITCH_INSIGHTS",
         tabLinksId: id,
