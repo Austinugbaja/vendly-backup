@@ -81,8 +81,8 @@ const MobileHeader = () => {
       <div>
         {displayMobileProfile ? (
           <ProfileStatusInfo
-            fullName={userProfile.fullName}
-            profilePic={userProfile.profilePic}
+            fullName={userProfile?.fullName}
+            profilePic={userProfile?.profilePic}
           />
         ) : (
           //  start search product

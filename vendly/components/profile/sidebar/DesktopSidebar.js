@@ -49,8 +49,8 @@ const DesktopSideBar = () => {
       <div className="flex flex-col h-full justify-between py-6 ">
         {/* start profile status info - profile image, product and sales metrics */}
         <ProfileStatusInfo
-          fullName={userProfile.fullName}
-          profilePic={userProfile.profilePic}
+          fullName={userProfile?.fullName}
+          profilePic={userProfile?.profilePic}
         />
         {/* end profile status info - profile image, product and sales metrics */}
 
