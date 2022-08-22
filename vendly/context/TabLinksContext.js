@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 import TabLinkReducer from "../reducers/TabLinksReducers";
 
-export const TabListContext = createContext();
+export const TabListContext = createContext(0);
 
 const TabLinkContextProvider = (props) => {
   const [tabIndex, dispatch] = useReducer(TabLinkReducer, 0);
