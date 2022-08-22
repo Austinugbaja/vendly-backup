@@ -1,17 +1,17 @@
 import { createContext, useReducer } from "react";
 import TabLinkReducer from "../reducers/TabLinksReducers";
 
-
-export const TabListContext = createContext()
+export const TabListContext = createContext();
 
 const TabLinkContextProvider = (props) => {
-    const [tabIndex, dispatch] = useReducer(TabLinkReducer, 0)
+  const [tabIndex, dispatch] = useReducer(TabLinkReducer, 0);
+  console.log(tabIndex, "tabIndex");
 
-    return ( 
-        <TabListContext.Provider value={{tabIndex, dispatch}}>
-            {props.children}
-        </TabListContext.Provider>
-    );
-}
- 
+  return (
+    <TabListContext.Provider value={{ tabIndex, dispatch }}>
+      {props.children}
+    </TabListContext.Provider>
+  );
+};
+
 export default TabLinkContextProvider;

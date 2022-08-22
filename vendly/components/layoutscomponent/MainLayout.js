@@ -87,17 +87,17 @@ const MainLayout = ({ children }) => {
 export const getLayout = (page) => {
   return (
     <UserContextProvider>
-      <PageTitleContextProvider>
-        <DisplayMobileHeaderProvider>
-          <NotificationBarContextProvider>
-            <TabLinkContextProvider>
+      <TabLinkContextProvider>
+        <PageTitleContextProvider>
+          <DisplayMobileHeaderProvider>
+            <NotificationBarContextProvider>
               <DisplayMobileProfileProvider>
                 <MainLayout>{page}</MainLayout>
               </DisplayMobileProfileProvider>
-            </TabLinkContextProvider>
-          </NotificationBarContextProvider>
-        </DisplayMobileHeaderProvider>
-      </PageTitleContextProvider>
+            </NotificationBarContextProvider>
+          </DisplayMobileHeaderProvider>
+        </PageTitleContextProvider>
+      </TabLinkContextProvider>
     </UserContextProvider>
   );
 };
