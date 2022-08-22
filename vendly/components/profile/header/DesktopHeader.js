@@ -9,7 +9,7 @@ const DesktopHeader = () => {
   const { tabIndex } = useContext(TabListContext);
   const [tabPageTitle, setTabPageTitle] = useState();
   const { pageTitle } = useContext(PageTitleContext);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [scrollPos, setScrollPos] = useState(0);
 
   // toggling the notification sidebar open

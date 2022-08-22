@@ -35,8 +35,12 @@ const ProductPage = () => {
           }}
           className="grid sm:gap-y-4 sm:gap-x-1 gap-y-2 gap-x-2"
         >
-          {Object.keys(userProfile.products).map((product) => (
-            <Product key={product} product={userProfile.products[product]} />
+          {Object.keys(userProfile?.products).map((product) => (
+            <Product
+              key={product}
+              product={userProfile?.products[product]}
+              gridWidth={gridWidth}
+            />
           ))}
         </div>
       </div>
