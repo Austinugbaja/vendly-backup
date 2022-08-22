@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 import UserProfileReducer from "../reducers/UserProfileReducer";
 
-export const UserContext = createContext();
+export const UserContext = createContext(null);
 
 const UserContextProvider = (props) => {
   const [userProfile, dispatch] = useReducer(UserProfileReducer, {

@@ -1,16 +1,16 @@
-import { createContext, useReducer, useRef } from "react"
-import NotificationBarReducer from "../reducers/NotificationBarReducer"
+import { createContext, useReducer, useRef } from "react";
+import NotificationBarReducer from "../reducers/NotificationBarReducer";
 
-export const NotificationBarContext = createContext()
+export const NotificationBarContext = createContext(false);
 
 const NotificationBarContextProvider = (props) => {
-    const [ toggle, dispatch ] = useReducer(NotificationBarReducer, false)
+  const [toggle, dispatch] = useReducer(NotificationBarReducer, false);
 
-    return (
-        <NotificationBarContext.Provider value={{toggle, dispatch}}>
-            { props.children }
-        </NotificationBarContext.Provider>
-    )
-}
+  return (
+    <NotificationBarContext.Provider value={{ toggle, dispatch }}>
+      {props.children}
+    </NotificationBarContext.Provider>
+  );
+};
 
-export default NotificationBarContextProvider
+export default NotificationBarContextProvider;

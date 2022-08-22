@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 
-export const DisplayMobileProfileContext = createContext();
+export const DisplayMobileProfileContext = createContext(true);
 
 const DisplayMobileProfileProvider = (props) => {
   const [displayMobileProfile, setDisplayMobileProfile] = useState(true);
