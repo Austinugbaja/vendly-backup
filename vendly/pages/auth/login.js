@@ -5,7 +5,7 @@ import Loader from "../components/Auth/Loader/Loader";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
-import GoToTop from "../components/GoToTop/GoToTop";
+// import GoToTop from "../components/GoToTop/GoToTop";
 import { AuthContext } from "../state/contexts/AuthContext";
 import AlertModal from "../components/Modals/AlertModal";
 
