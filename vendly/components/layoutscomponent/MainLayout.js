@@ -59,7 +59,7 @@ const MainLayout = ({ children }) => {
           {/* end header */}
 
           {/* start children */}
-          {children}
+          <div className="p-4">{children}</div>
           {/* end children */}
         </section>
         {/* ends header and children */}
