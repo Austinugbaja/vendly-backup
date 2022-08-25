@@ -3,6 +3,7 @@ import {
   BusinessInfoIcon,
   ContactIcon,
   HealthIcon,
+  WalletIcon,
 } from "../components/iconsComponent/Icons";
 import MainLayout, {
   getLayout,
@@ -27,7 +28,18 @@ const Accounts = () => {
       id: 3,
       route: "/accounts/bank_details",
     },
-    // { icon: <ContactIcon width="22" height="24" />, tabName: 'Contact Details', id: 4, route: '/accounts/contact_details'}
+    {
+      icon: <ContactIcon width="22" height="24" />,
+      tabName: "Contact Details",
+      id: 4,
+      route: "/accounts/contact_details",
+    },
+    {
+      icon: <WalletIcon width="20" height="20" />,
+      tabName: "My Wallet",
+      id: 5,
+      route: "/accounts/wallet",
+    },
   ];
 
   return (
